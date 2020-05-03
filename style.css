@@ -1,6 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #34495e;
   color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  margin: 0;
+  overflow: hidden; /* keep scroll bars hidden */
+}
+
+h1 {
+  margin: 20px 0 0;
+}
+
+.game-container {
+  padding: 20px 30px;
+  position: relative; /* parent has to be relative if you want to position other items absolute within the element */
+  margin: auto;
+  height: 350px;
+  width: 450px;
 }
 
 .figure-container {
@@ -12,4 +35,42 @@ body {
 
 .figure-part {
   display: none;
+}
+
+.wrong-letters-container {
+  position: absolute; /* this works because in .game-container the position as a parent is relative */
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  border: 1px solid #fff;
+}
+
+.wrong-letters-container p {
+  margin: 0 0 5px;
+}
+
+.wrong-letters-container span {
+  font-size: 24px;
+}
+
+/* this makes the word display horizontally rather than the default of vertical due to how the html is written */
+.word {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 50%; /* this puts the first letter of the word at the 50% mark */
+  transform: translateX(-50%); /* this shifts the word to be centered */
+}
+
+.letter {
+  border-bottom: 3px solid #2980b9;
+  display: inline-flex;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3px;
+  height: 50px;
+  width: 20px;
 }
