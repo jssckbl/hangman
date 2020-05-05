@@ -15,7 +15,7 @@ const words = ["application", "programming", "interface", "wizard"];
 // game selects random word from words array
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
-const correctLetters = [];
+const correctLetters = ["w", "i", "z", "a", "r", "d"];
 const wrongLetters = [];
 
 // Show the hidden word
@@ -34,6 +34,11 @@ function displayWord() {
         ) // map through each letter in the now formed array
         .join("") // turn string back into array
     }`;
+  const innerWord = wordEl.innerText.replace(/\n/g, ""); // 9:40 relisten - when doing a console log each letter appears on a new line, so this variable allows for all the correct letters to appear on the same line -- console.log(wordEl.innerText);
+  if (innerWord === selectedWord) {
+    finalMessage.innerText = "Congratulations! You won!";
+    popup.style.display = "flex";
+  }
 }
 
 displayWord();
