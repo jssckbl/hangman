@@ -23,7 +23,7 @@ function displayWord() {
   wordEl.innerHTML = `
     ${
       selectedWord
-        .split("") //    need to turn string into an array
+        .split("")
 
         .map(
           letter => `
@@ -100,6 +100,20 @@ window.addEventListener("keydown", e => {
       }
     }
   }
+});
+
+// Restart game and play again
+playAgainBtn.addEventListener("click", () => {
+  // Empty arrays
+  correctLetters.splice(0);
+  wrongLetters.splice(0);
+  // Display new word
+  selectedWord = words[Math.floor(Math.random() * words.length)];
+  displayWord();
+  // Remove hangman figure
+  updateWrongLettersEl();
+  // Hide the popup for end of game
+  popup.style.display = "none";
 });
 
 displayWord();
