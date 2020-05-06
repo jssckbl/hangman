@@ -6,10 +6,20 @@ This project allows the player to play the word-guessing game, Hangman. The play
 
 CSS, JavaScript and HTML are used.
 
+Examples:
+
+How screen appears when game begins
+
 ![hangman game start](hangmanStart.png)
+
+Example of screen while playing
 
 ![hangman game while playing](hangmanPlaying.png)
 
+Example of screen when player wins
+
 ![hangman game win screen](hangmanWin.png)
+
+Example of screen when player loses
 
 ![hangman game lose screen](hangmanLost.png)
